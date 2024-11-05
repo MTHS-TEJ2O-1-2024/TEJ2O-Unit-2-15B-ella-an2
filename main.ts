@@ -1,8 +1,40 @@
 /* Copyright (c) 2020 MTHS All rights reserved
  *
- * Created by: Mr. Coxall
- * Created on: Sep 2020
- * This program ...
+ * Created by: Ella An
+ * Created on: Nov 2024
+ * This program lights up pixels
 */
 
-basic.showString('Hello, World!')
+// variable
+let sprite: game.LedSprite = null
+let loopCounter1 = 0
+let loopCounter2 = 0
+
+// setup
+basic.showIcon(IconNames.Happy)
+basic.pause(500)
+basic.clearScreen()
+
+// when button a is pressed, the pixels light up clockwise
+input.onButtonPressed(Button.A, function () {
+    // setup
+    basic.clearScreen()
+    loopCounter1 = 0
+    sprite = game.createSprite(0, 0)
+
+    while (loopCounter2 < 4) {
+        loopCounter1 = 0
+
+        // to light and move the pixel
+        while (loopCounter1 <= 5) {
+            basic.pause(500)
+            sprite.move(1)
+            loopCounter1 = loopCounter1 + 1
+        }
+
+        loopCounter2 = loopCounter2 + 1
+        sprite.turn(Direction.Right, 90)
+    }
+    sprite.delete()
+    basic.showIcon(IconNames.Happy)
+})
