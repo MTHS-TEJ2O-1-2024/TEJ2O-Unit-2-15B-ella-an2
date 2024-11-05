@@ -1,8 +1,8 @@
 /* Copyright (c) 2020 MTHS All rights reserved
  *
  * Created by: Ella An
- * Created on: Oct 2024
- * This program lights up pixels
+ * Created on: Nov 2024
+ * This program lights up pixels using while loops
 */
 
 // variable
